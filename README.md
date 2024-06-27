@@ -2,6 +2,36 @@
 
 EtherBundleBot is a Node.js script designed to automate the process of launching and bundling tokens on the Ethereum blockchain.
 
+Требуется скрипт (script), который будет делать bundle свой запуск монеты на Ethereum.
+
+Процесс работы:
+
+1. Контракт я сам развертываю через Remix;
+
+2. Отправляю pk кошелька от deployer на скрипт;
+
+3. Отправляю pk кошельков для bundle на скрипт;
+
+4. Скрипт спрашивает какой % монет я хочу получить с bundle, далее показывает сколько мне нужно эфира добавить на кошельки для bundle согласно LP, нажимаю open trade + bundle.
+
+5. Скрипт делает open trade + bundle. На выходе я получаю монеты на все кошельки добавленные в bundle и даже первее тех, кто сделал bribe tip for validator 0.5 eth.
+
+Запуск скрипта командой по типу ts-node script.ts на Node.js
+
+Вот пример монеты, в которой есть скрипт bundle.
+
+1. Кошелек Deployer https://etherscan.io/address/0xca7b48935bde0acc96feb61676d814cecbe734d4
+
+2. Bundle кошельки https://etherscan.io/address/0xbb11507d4e504e1ace91969ca51f9017cec40f0f
+
+По ссылке «2 days ago» вы можете увидеть все кошельки, составившие bundle.
+
+3. Доказательство того, что "bundle" и "open trade" происходят в одном блоке - на примере блока  20134787. https://etherscan.io/tx/0x63ab4b6e34ac4420c6d462f98984d59a6d18ed70cd184ffe8b94189a5e2e8fc6
+https://etherscan.io/tx/0xa90b806d583661cdae1da37bb14fe4ec9cbe32f41e3cb318514389cdd543bbf0
+
+Вот мне нужно тоже самое.
+
+
 ## Requirements
 
 - Node.js v14 or higher
