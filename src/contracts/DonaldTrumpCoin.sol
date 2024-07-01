@@ -1,12 +1,15 @@
-// src/contracts/DonaldTrumpCoin.sol
+/**
+ *Submitted for verification at Etherscan.io on 2024-06-20
+*/
 
 // SPDX-License-Identifier: MIT
-/**
+/*
 Telegram - https://t.me/DonaldTrumpCoinETH
 
 Twitter - https://x.com/TrumpCoinonEth
 
 Website - https://dtcerc20.com
+
 */
 
 pragma solidity = 0.8.25;
@@ -553,7 +556,8 @@ contract DONALDTRUMPCOIN  is ERC20, Ownable {
 
     constructor(address wallet) ERC20(_name, _symbol) {
 
-        _uniswapV2Router = IUniswapV2Router02(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D);
+        // _uniswapV2Router = IUniswapV2Router02(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D); // mainnet
+        _uniswapV2Router = IUniswapV2Router02(0x425141165d3DE9FEC831896C016617a52363b687); // sepolia
         uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory()).createPair(address(this), _uniswapV2Router.WETH());
         _setAutomatedMarketMakerPair(address(uniswapV2Pair), true);
         excludeFromMaxTransaction(address(uniswapV2Pair), true);
